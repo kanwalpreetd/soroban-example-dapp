@@ -18,13 +18,13 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: stellar/actions/rust-cache@main
     - run: rustup update
     - run: rustup target add wasm32-unknown-unknown
     - run: make build
     - run: cargo install_soroban
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version: 18.14.2
         cache: 'npm'
